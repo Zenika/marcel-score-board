@@ -17,7 +17,7 @@
         <p class="msc-top-score__rank"> {{ index + 1 }}</p>
         <div class="msc-top-score__content">
           <p class="msc-top-score__score">
-            {{ (score[2]).toLocaleString('fr') }}
+            {{ (score[2]) }}
             <span class="msc-top-score__score__pts">pts</span>
           </p>
           <p class="msc-top-score__pseudo">{{ score[1] }}</p>
@@ -40,7 +40,7 @@
             <span class="msc-score-table__rank">{{ index + 4 }}</span>
           </td>
           <td class="msc-score-table__score">
-            {{ (score[2]).toLocaleString('fr') }}
+            {{ score[2] }}
             <span class="msc-score-table__score__pts">pts</span>
           </td>
           <td>{{ score[1] }}</td>
@@ -60,9 +60,9 @@ let scores = ref<Array<Array<string>>>([]);
 
 const SPREADSHEET_ID: string = "1G9simK3R8ByIOrFMhmcDfon4GF-70_stKzjdztV5r5Q";
 
-async function loadSpreadSheet(API_KEY: any): Promise<void> {
+async function loadSpreadSheet(apiKey: any): Promise<void> {
   isUpdating.value = true;
-  const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/A2:D?key=${API_KEY}`, {
+  const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/A2:D?key=${apiKey}`, {
     method: "GET",
   });
   const data = await response.json();
@@ -74,7 +74,7 @@ async function loadSpreadSheet(API_KEY: any): Promise<void> {
 }
 
 function updateScore(values: Array<Array<string>>) {
-  lastUpdateDate.value = formatDate(Date.now());
+  lastUpdateDate.value = formatDate(Date.now().toLocaleString());
   scores.value = values;
   scores.value.sort((a, b) => {
     if (parseInt(a[2]) < parseInt(b[2]))
@@ -84,7 +84,7 @@ function updateScore(values: Array<Array<string>>) {
   localStorage.setItem("scores", JSON.stringify(scores.value));
 }
 
-function formatDate(value: number): string {
+function formatDate(value: string): string {
   const now = new Date(value);
   const date = now.toLocaleDateString('fr');
   const hour = now.toLocaleTimeString('fr').split(":").slice(0, 2).join(":");
@@ -92,20 +92,24 @@ function formatDate(value: number): string {
 }
 
 onMounted(() => {
-  window.parent.postMessage({ type: 'loaded' }, '*')
   // last data used
   const oldScores = localStorage.getItem("scores");
   if (oldScores)
     scores.value = JSON.parse(oldScores);
 
   // update data
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  if (urlParams.has('API_KEY')) {
-    const API_KEY = urlParams.get('API_KEY');
-    loadSpreadSheet(API_KEY);
-  } else
-    console.log("ERROR while loading iframe parameters");
+  window.addEventListener('message', event => {
+    if (event.source !== parent) return
+    const message = event.data
+
+    if (message.type === 'propsChange') {
+      const { newProps } = message.payload;
+      loadSpreadSheet(newProps.apiKey);
+      // mettre à jour l'affichage du plugin en utilisant newProps
+    }
+  });
+
+  window.parent.postMessage({ type: 'loaded' }, '*');
 });
 
 </script>

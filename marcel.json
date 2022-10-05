@@ -1,0 +1,13 @@
+{
+  "eltName": "marcel-plugin-score-board",
+  "name": "Score Board",
+  "frontend": {
+    "props": [
+      {
+        "name": "apiKey",
+        "type": "string",
+        "description": "The api key to access the google sheet"
+      }
+    ]
+  }
+}
