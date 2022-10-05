@@ -74,7 +74,8 @@ async function loadSpreadSheet(apiKey: any): Promise<void> {
 }
 
 function updateScore(values: Array<Array<string>>) {
-  lastUpdateDate.value = formatDate(Date.now().toString());
+  const date = new Date(Date.now())
+  lastUpdateDate.value = formatDate(date.toString());
   scores.value = values;
   scores.value.sort((a, b) => {
     if (parseInt(a[2]) < parseInt(b[2]))
