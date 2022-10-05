@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(score, index) in scores.slice(3, 11)" :key="score[0]">
+        <tr v-for="(score, index) in scores.slice(3, 10)" :key="score[0]">
           <td>
             <span class="msc-score-table__rank">{{ index + 4 }}</span>
           </td>
