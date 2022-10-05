@@ -1,0 +1,224 @@
+@keyframes spinning {
+  from { transform: rotateZ(0deg) }
+  to { transform: rotateZ(360deg) }
+}
+
+.msc-updating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  position: fixed;
+  bottom: -4rem;
+  right: 1rem;
+  padding: .75rem 1.75rem;
+  padding-left: 1rem;
+  border-radius: .75rem;
+  background-color: $white;
+  color: $black;
+  font-family: Nunito;
+  font-weight: bold;
+  z-index: 1;
+  transition: .3s;
+
+  &.-visible {
+    bottom: 1rem;
+  }
+
+  &__loader {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 5px solid $red;
+    border-bottom-color: transparent;
+    border-radius: .75rem;
+    animation: 1s infinite spinning;
+  }
+}
+
+.msc-last-update {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  bottom: -4rem;
+  right: 1rem;
+  padding: .75rem 1.75rem;
+  border-radius: .75rem;
+  background-color: $white;
+  color: $black;
+  font-family: Nunito;
+  font-weight: bold;
+  transition: .3s;
+  z-index: 1;
+  border: 1px solid rgba($black, .05);
+  box-shadow: 4px 6px 8px rgba($black, .2);
+
+  &.-visible {
+    bottom: 1rem;
+  }
+
+  &__label {
+    font-size: .8rem;
+    color: lighten($black, 50%);
+  }
+}
+
+.msc-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 6rem 2rem 2rem 2rem;
+  background-color: $black;
+  height: 100vh;
+
+  * {
+    color: $black;
+    font-family: Nunito;
+  }
+}
+
+.msc-title {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: left;
+  color: lighten($red, 6%);
+}
+
+.msc-subtitle {
+  width: 100%;
+  max-width: 1200px;
+  font-weight: bold;
+  text-align: left;
+  color: $red;
+}
+
+.msc-top-score {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem 2rem 1rem 1rem;
+    border-radius: 1.5rem;
+    background-color: $white;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, $red2 5%, $red1);
+    color: $white;
+  }
+
+  &__score {
+    font-weight: bold;
+    font-size: 2rem;
+
+    &__pts {
+      font-size: 1rem;
+      color: $red;
+    }
+  }
+
+  &__pseudo {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  &__date {
+    font-size: .8rem;
+    font-weight: bold;
+    color: lighten($black, 50%);
+  }
+}
+
+.msc-score-table {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 3rem;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+
+  thead th {
+    color: lighten($red, 6%);
+    text-align: left;
+
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+
+    &:last-child {
+      padding-right: 1rem;
+      text-align: right;
+    }
+  }
+
+  tbody {
+    tr {
+      width: 100%;
+      background-color: $white;
+      td:first-child {
+        padding: .5rem 1rem;
+        border-radius: .75rem 0 0 .75rem;
+      }
+
+      td:last-child {
+        padding: .5rem 1rem;
+        border-radius: 0 .75rem .75rem 0;
+        text-align: right;
+      }
+    }
+    width: 100%;
+  }
+
+  &__rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, $red2 5%, $red1);
+    color: $white;
+  }
+
+  &__score {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    &__pts {
+      color: $red;
+      font-size: .8rem;
+    }
+  }
+
+  &__date {
+    color: lighten($black, 50%);
+    font-weight: bold;
+    font-size: .8rem;
+  }
+}
