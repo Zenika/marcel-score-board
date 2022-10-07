@@ -12,7 +12,7 @@
         "name": "refreshRate",
         "type": "int",
         "description": "Time between 2 refresh in ms",
-        "value": 300000
+        "value": "300000"
       }
     ]
   }
