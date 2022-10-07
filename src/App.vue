@@ -106,7 +106,7 @@ onMounted(() => {
     if (message.type === 'propsChange') {
       const { newProps } = message.payload;
       loadSpreadSheet(newProps.apiKey);
-      setInterval(() => loadSpreadSheet(newProps.apiKey), newProps.refreshRate * 100)
+      setInterval(() => loadSpreadSheet(newProps.apiKey), newProps.refreshRate * 1000)
       // mettre à jour l'affichage du plugin en utilisant newProps
     }
   });
