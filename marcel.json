@@ -7,6 +7,12 @@
         "name": "apiKey",
         "type": "string",
         "description": "The api key to access the google sheet"
+      },
+      {
+        "name": "refreshRate",
+        "type": "number",
+        "description": "Time between 2 refresh in ms",
+        "value": 300000
       }
     ]
   }
