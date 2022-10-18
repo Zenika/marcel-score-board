@@ -127,7 +127,6 @@ body {
   gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 1rem;
 
   &__logo {
     border: .3rem solid lighten($red, 6%);
@@ -164,6 +163,7 @@ body {
   text-align: left;
   padding-left: 8.2rem;
   color: lighten($red, 6%);
+  margin-top: .5rem;
 }
 
 .msc-top-score {
@@ -171,6 +171,7 @@ body {
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+  margin-top: 2.5rem;
 
   &__card {
     display: flex;
