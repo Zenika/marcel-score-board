@@ -75,7 +75,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 10vh 2rem 2rem 2rem;
+  padding: 15vh 2rem 2rem 2rem;
   background-color: $black;
   height: 100vh;
   overflow: hidden;
@@ -127,6 +127,7 @@ body {
   gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
+  margin-bottom: 1rem;
 
   &__logo {
     border: .3rem solid lighten($red, 6%);
@@ -161,7 +162,6 @@ body {
   max-width: 1200px;
   font-weight: bold;
   text-align: left;
-  padding-top: .5rem;
   padding-left: 8.2rem;
   color: lighten($red, 6%);
 }
