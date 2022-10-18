@@ -7,8 +7,19 @@
     <span class="msc-last-update__label">Dernière mise à jour:</span>
     {{ lastUpdateDate }}
   </div>
+  <div class="msc-zenika-container">
+    <img class="msc-zenika-logo" src="src/assets/zenika.png"/>
+    <h1 class="msc-title">Zenika Nantes</h1>
+  </div>
   <main class="msc-page">
-    <h1 class="msc-title">Tableau des scores</h1>
+    <div class="msc-header">
+      <div class="msc-header__logo"></div>
+      <span class="msc-header__divider"></span>
+      <div class="msc-header__content">
+        <h2 class="msc-title">Tableau des scores</h2>
+        <h3 class="msc-title">Project-n1870</h3>
+      </div>
+    </div>
     <p class="msc-subtitle" v-if="scores.length === 0">
       Aucun score à afficher !
     </p>

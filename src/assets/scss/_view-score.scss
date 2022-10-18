@@ -3,6 +3,11 @@
   to { transform: rotateZ(360deg) }
 }
 
+body {
+  background-color: $black;
+  overflow: hidden;
+}
+
 .msc-updating {
   display: flex;
   align-items: center;
@@ -81,13 +86,69 @@
   }
 }
 
+.msc-zenika-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  padding: .5rem 1rem .5rem 1rem;
+  background-color: $white;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 4px 6px 10px rgba(black, .75);
+
+  .msc-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: saturate($red, 15%);
+    font-family: Nunito;
+  }
+
+  .msc-zenika-logo {
+    width: 4.5rem;
+  }
+}
+
 .msc-title {
-  width: 100%;
-  max-width: 1200px;
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
   color: lighten($red, 6%);
+}
+
+.msc-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+
+  &__logo {
+    border: .3rem solid $red;
+    border-radius: 3.5rem;
+    height: 5rem;
+    width: 5rem;
+    background: url("src/assets/DevFestNantes_2022_Visuel.png") center 20%;
+    background-size: 175%;
+    background-color: $white;
+  }
+
+  &__divider {
+    display: block;
+    height: 75%;
+    width: .2rem;
+    background: $red;
+  }
+
+  h2.msc-title {
+    line-height: 3rem;
+  }
+
+  h3.msc-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
 }
 
 .msc-subtitle {
