@@ -74,7 +74,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 3.5rem;
   padding: 15vh 2rem 2rem 2rem;
   background-color: $black;
   height: 100vh;
@@ -163,7 +163,6 @@ body {
   text-align: left;
   padding-left: 8.2rem;
   color: lighten($red, 6%);
-  margin-top: .5rem;
 }
 
 .msc-top-score {
@@ -171,7 +170,6 @@ body {
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  margin-top: 2.5rem;
 
   &__card {
     display: flex;
@@ -228,7 +226,6 @@ body {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  margin-top: 5vh;
   border-collapse: separate;
   border-spacing: 0 1rem;
 
