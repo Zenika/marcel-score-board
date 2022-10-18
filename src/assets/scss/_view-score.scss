@@ -87,27 +87,28 @@ body {
 }
 
 .msc-zenika-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  top: 0;
-  left: 0;
+  gap: 1rem;
   padding: .5rem 1rem .5rem 1rem;
   background-color: $white;
-  border-radius: 0 0 2rem 2rem;
+  border-bottom-right-radius: 2rem;
   box-shadow: 4px 6px 10px rgba(black, .75);
 
   .msc-title {
-    font-size: 5rem;
+    font-size: 2.75rem;
     font-weight: bold;
     color: saturate($red, 15%);
     font-family: Nunito;
   }
 
   .msc-zenika-logo {
-    height: 4.5rem;
-    width: 4.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
     background: url("../zenika.png") center center;
     background-size: contain;
   }
