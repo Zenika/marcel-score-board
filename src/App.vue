@@ -7,8 +7,11 @@
     <span class="msc-last-update__label">Dernière mise à jour:</span>
     {{ lastUpdateDate }}
   </div>
+  <h1 class="msc-title"><img id="msc-zenika" src="src/assets/zenika.png" />Zenika Nantes</h1>
+  <img id="msc-logo" src="src/assets/DevFestNantes_2022_Visuel.png" />
   <main class="msc-page">
-    <h1 class="msc-title">Tableau des scores</h1>
+
+    <h2 class="msc-title">Tableau des scores</h2>
     <p class="msc-subtitle" v-if="scores.length === 0">
       Aucun score à afficher !
     </p>

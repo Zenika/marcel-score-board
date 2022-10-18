@@ -3,6 +3,11 @@
   to { transform: rotateZ(360deg) }
 }
 
+body {
+  background-color: $black;
+  overflow: hidden;
+}
+
 .msc-updating {
   display: flex;
   align-items: center;
@@ -81,13 +86,38 @@
   }
 }
 
-.msc-title {
+h1.msc-title {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  color: lighten($red, 6%);
+  padding: 1em 0 0 2em;
+  font-family: Nunito;
+}
+
+h2.msc-title {
   width: 100%;
   max-width: 1200px;
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
   color: lighten($red, 6%);
+}
+
+#msc-logo {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  overflow: hidden;
+}
+
+#msc-zenika {
+  width: 200px;
+  vertical-align: middle;
+  padding-right: 1em;
 }
 
 .msc-subtitle {
