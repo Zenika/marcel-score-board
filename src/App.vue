@@ -20,7 +20,7 @@
     <div class="msc-top-score" v-if="scores.length > 0">
       <div class="msc-top-score__card" v-for="(score, index) in scores.slice(0, 3)" :key="score[0]">
         <div class="msc-top-score__card__header">
-	        <p class="msc-top-score__rank"> {{ index + 1 }}</p>
+	        <p class="msc-top-score__rank"> <span>{{ index + 1 }}</span></p>
 	        <p class="msc-top-score__pseudo">{{ score[0] }}</p>
         </div>
 	      <div class="msc-top-score__score">
@@ -51,7 +51,9 @@
         <tr v-for="(score, index) in scores.slice(3, 10)" :key="score[0]">
 	        <td>
 		       <div class="msc-score-table__pseudo">
-			       <span class="msc-score-table__rank">{{ index + 4 }}</span>
+			       <div class="msc-score-table__rank">
+				       <span>{{ index + 4 }}</span>
+			       </div>
 			       {{ score[0] }}
 		       </div>
 	        </td>
@@ -70,6 +72,7 @@ const lastUpdateDate = ref<string>("");
 let scores = ref<Array<Array<string>>>([]);
 
 const SPREADSHEET_ID: string = "1U5A97xU_V6hAa4p2_pvPZQL4552lRpqSObL5H1CB9oI";
+const REFRESH_RATE: number = 60 * 5;
 
 async function loadSpreadSheet(apiKey: any): Promise<void> {
   isUpdating.value = true;
@@ -88,12 +91,16 @@ function updateScore(values: Array<Array<string>>) {
   const date = new Date(Date.now())
   lastUpdateDate.value = formatDate(date.toString());
   scores.value = values;
-  scores.value.sort((a, b) => {
-    if (parseInt(a[3]) < parseInt(b[3]))
-      return 1;
-    return -1;
-  });
+  scores.value.sort(sortScore);
   localStorage.setItem("scores", JSON.stringify(scores.value));
+}
+
+function sortScore(a:Array<string>, b: Array<string>) {
+	if (parseInt(a[3]) < parseInt(b[3]))
+		return 1;
+	if (parseInt(a[3]) === parseInt(b[3]))
+		return a[2] < b[2] ? 1 : -1;
+	return -1;
 }
 
 function formatDate(value: string): string {
@@ -110,17 +117,8 @@ onMounted(() => {
     scores.value = JSON.parse(oldScores);
 
   // update data
-  window.addEventListener('message', event => {
-    if (event.source !== parent) return
-    const message = event.data
-
-    if (message.type === 'propsChange') {
-      const { newProps } = message.payload;
-      loadSpreadSheet(newProps.apiKey);
-      setInterval(() => loadSpreadSheet("AIzaSyCasDc28gfYMH1La9vxH3IMfHYgM_Yq8Rk"), newProps.refreshRate * 1000)
-      // mettre à jour l'affichage du plugin en utilisant newProps
-    }
-  });
+	loadSpreadSheet("AIzaSyCasDc28gfYMH1La9vxH3IMfHYgM_Yq8Rk");
+	setInterval(() => loadSpreadSheet("AIzaSyCasDc28gfYMH1La9vxH3IMfHYgM_Yq8Rk"), REFRESH_RATE * 1000)
 
   window.parent.postMessage({ type: 'loaded' }, '*');
 });
