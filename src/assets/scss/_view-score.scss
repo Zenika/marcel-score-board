@@ -11,8 +11,8 @@ body {
 .msc-updating {
   gap: .75rem;
   position: fixed;
-  bottom: -4rem;
-  right: -1rem;
+  bottom: 0;
+  right: -15rem;
   padding: .75rem 2.5rem 1.25rem 1.75rem;
   background-color: $red;
   color: $white;
@@ -20,17 +20,18 @@ body {
   font-weight: bold;
   z-index: 1;
   transition: .3s;
-  transform: skewX(-25deg);
+  transform: skewX(-15deg);
 
   &.-visible {
-    bottom: 0;
+    right: -1rem;
+
   }
 
   &__content {
     display: flex;
     gap: .75rem;
     align-items: center;
-    transform: skewX(25deg);
+    transform: skewX(15deg);
   }
 
   &__loader {
@@ -46,8 +47,8 @@ body {
 
 .msc-last-update {
   position: fixed;
-  bottom: -4rem;
-  right: -1rem;
+  bottom: 0;
+  right: -15rem;
   padding: .75rem 2.5rem 1.25rem 1.75rem;
   background-color: $red;
   color: $white;
@@ -57,17 +58,17 @@ body {
   z-index: 1;
   border: 1px solid rgba($black, .05);
   box-shadow: 4px 6px 8px rgba($black, .2);
-  transform: skewX(-25deg);
+  transform: skewX(-15deg);
 
   &.-visible {
-    bottom: 0;
+    right: -1rem;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    transform: skewX(25deg);
+    transform: skewX(15deg);
   }
 
   &__label {
@@ -82,8 +83,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 3.5rem;
-  padding: 15vh 2rem 2rem 2rem;
-  background: transparentize($black, .5);
+  padding: 2rem;
+  background: transparentize($black, .6);
   height: 100vh;
   overflow: hidden;
 
@@ -104,12 +105,47 @@ body {
     color: $black;
     font-family: 'Open Sans', sans-serif;
   }
+
+  &__header {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+.msc-top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background-color: transparentize($black, .3);
+    color: yellow;
+    outline: none;
+    padding: .75rem 1.25rem;
+    border: 2px solid $yellow;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: $yellow;
+      color: $black;
+    }
+
+    &:active {
+      transform: scale(1);
+      background-color: darken($yellow, 10%);
+      border-color: darken($yellow, 10%);
+      color: $black;
+    }
+  }
 }
 
 .msc-zenika-logo {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
   height: 2.5rem;
   width: 2.5rem;
   background: url("../zenika.png") center center;
@@ -150,7 +186,7 @@ h2.msc-title {
     gap: 1.25rem;
     width: 100%;
     border-radius: .5rem;
-    background-color: transparentize($black, .3);
+    background-color: transparentize($black, .25);
     padding: 0 2rem 1rem 0;
     border: 1px solid $white;
     overflow: hidden;
@@ -244,7 +280,7 @@ h2.msc-title {
   tbody {
     tr {
       width: 100%;
-      background-color: transparentize($black, .3);
+      background-color: transparentize($black, .25);
 
       td:first-child {
         padding: 0;

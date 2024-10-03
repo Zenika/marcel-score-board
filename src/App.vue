@@ -1,43 +1,19 @@
 <template>
-  <div class="msc-updating" :class="{ '-visible': isUpdating }">
-	  <div class="msc-updating__content">
-	    <span class="msc-updating__loader"></span>
-	    Mise à jour en cours...
+	<StatusAlert :last-update-date="lastUpdateDate" :is-updating="isUpdating"/>
+	<Announce :is-visible="isAnnounceVisible" @close="isAnnounceVisible = false"/>
+	<main class="msc-page">
+	  <div class="msc-top-bar">
+		  <div class="msc-zenika-logo"></div>
+		  <button @click="isAnnounceVisible = !isAnnounceVisible">Z'est parti !</button>
 	  </div>
-  </div>
-  <div class="msc-last-update" :class="{ '-visible': !isUpdating }">
-	  <div class="msc-last-update__content">
-		  <span class="msc-last-update__label">Dernière mise à jour :</span>
-		  {{ lastUpdateDate }}
+	  <div class="msc-page__header">
+		  <h2 class="msc-title">Tableau des scores</h2>
+		  <p class="msc-subtitle" v-if="scores.length === 0">
+			  Aucun score à afficher !
+		  </p>
 	  </div>
-  </div>
-	<div class="msc-zenika-logo"></div>
-  <main class="msc-page">
-	  <h2 class="msc-title">Tableau des scores</h2>
-    <p class="msc-subtitle" v-if="scores.length === 0">
-      Aucun score à afficher !
-    </p>
     <div class="msc-top-score" v-if="scores.length > 0">
-      <div class="msc-top-score__card" v-for="(score, index) in scores.slice(0, 3)" :key="score[0]">
-        <div class="msc-top-score__card__header">
-	        <p class="msc-top-score__rank"> <span>{{ index + 1 }}</span></p>
-	        <p class="msc-top-score__pseudo">{{ score[0] }}</p>
-        </div>
-	      <div class="msc-top-score__score">
-		      <div class="msc-top-score__score__stat">
-			      <p class="msc-top-score__score__label">Score</p>
-			      <p class="msc-top-score__score__value">
-				      {{ score[3] }}
-			      </p>
-		      </div>
-		      <div class="msc-top-score__score__stat">
-			      <p class="msc-top-score__score__label">Temps</p>
-			      <p class="msc-top-score__score__value">
-				      {{ score[2] }}
-			      </p>
-		      </div>
-	      </div>
-      </div>
+	    <ScoreCard v-for="(score, index) in scores.slice(0, 3)" :key="score[0]" :score="score" :index="index"/>
     </div>
     <table class="msc-score-table" v-if="scores.length > 3">
       <thead>
@@ -65,7 +41,12 @@
   </main>
 </template>
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import {onMounted, ref} from 'vue';
+import StatusAlert from '@/StatusAlert.vue';
+import ScoreCard from '@/ScoreCard.vue';
+import Announce from '@/Announce.vue';
+
+const isAnnounceVisible = ref(false);
 
 const isUpdating = ref<boolean>(true);
 const lastUpdateDate = ref<string>("");
