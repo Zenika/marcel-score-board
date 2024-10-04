@@ -6,7 +6,7 @@
 		</div>
 		<div class="msc-top-score__score">
 			<div class="msc-top-score__score__stat">
-				<p class="msc-top-score__score__label">Score</p>
+				<p class="msc-top-score__score__label">Bonnes réponses</p>
 				<p class="msc-top-score__score__value">
 					{{ score[3] }}
 				</p>

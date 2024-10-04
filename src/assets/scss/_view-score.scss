@@ -82,8 +82,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 3.5rem;
-  padding: 2rem;
+  gap: 4rem;
   background: transparentize($black, .6);
   height: 100vh;
   overflow: hidden;
@@ -107,8 +106,12 @@ body {
   }
 
   &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 100%;
     max-width: 1200px;
+    margin: 0 2rem;
   }
 }
 
@@ -117,6 +120,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 2rem;
 
   button {
     background-color: transparentize($black, .3);
@@ -146,32 +150,23 @@ body {
 }
 
 .msc-zenika-logo {
-  height: 2.5rem;
-  width: 2.5rem;
-  background: url("../zenika.png") center center;
-  background-size: contain;
+  background: url("../quizz-icon.svg");
 }
 
 .msc-title {
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
-  color: lighten($red, 6%);
-}
-
-h2.msc-title {
   color: $white;
   width: 100%;
   line-height: 3rem;
 }
 
 .msc-subtitle {
-  width: 100%;
-  max-width: 1200px;
+  font-size: 1.25rem;
   font-weight: bold;
   text-align: left;
-  padding-left: 8.2rem;
-  color: lighten($red, 6%);
+  color: $white;
 }
 
 .msc-top-score {
@@ -179,6 +174,7 @@ h2.msc-title {
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+  margin: 0 2rem;
 
   &__card {
     display: flex;
@@ -188,7 +184,7 @@ h2.msc-title {
     border-radius: .5rem;
     background-color: transparentize($black, .25);
     padding: 0 2rem 1rem 0;
-    border: 1px solid $white;
+    // border: 1px solid $white;
     overflow: hidden;
 
     &__header {
@@ -219,10 +215,10 @@ h2.msc-title {
   }
 
   &__score {
-    margin-left: 4.75rem;
     display: flex;
     width: 100%;
     font-weight: bold;
+    margin-left: 3rem;
 
     &__stat {
       flex-grow: 1;
@@ -231,8 +227,7 @@ h2.msc-title {
     }
 
     &__label {
-      font-size: .8rem;
-      text-transform: uppercase;
+      font-size: 1rem;
       color: $yellow;
     }
 
@@ -245,8 +240,11 @@ h2.msc-title {
   &__pseudo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: $red;
+    color: #d32b2d;
     text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &__date {
@@ -261,7 +259,8 @@ h2.msc-title {
   width: 100%;
   max-width: 1200px;
   border-collapse: separate;
-  border-spacing: 0 1rem;
+  border-spacing: 0 .4rem;
+  margin: 0 2rem;
 
   thead th {
     color: $yellow;
@@ -285,20 +284,20 @@ h2.msc-title {
       td:first-child {
         padding: 0;
         border-radius: .25rem 0 0 .25rem;
-        border-left-width: 1px;
+        // border-left-width: 1px;
       }
 
       td:last-child {
         padding: .5rem 1rem;
         border-radius: 0 .25rem .25rem 0;
         text-align: right;
-        border-right-width: 1px;
+        // border-right-width: 1px;
       }
 
       td {
-        height: 3rem;
+        height: 3.5rem;
         color: $white;
-        border: 1px solid white;
+        // border: 1px solid white;
         border-right-width: 0;
         border-left-width: 0;
         font-size: 1.2rem;
@@ -315,18 +314,18 @@ h2.msc-title {
     font-size: 1.25rem;
     line-height: 1.25rem;
     font-weight: 800;
-    color: $red;
+    color: #d32b2d;
     text-transform: uppercase;
   }
 
   &__rank {
-    margin-left: -.3rem;
-    padding-left: .3rem;
+    margin-left: -.5rem;
+    padding-left: .5rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 3rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 5rem;
     font-weight: bold;
     font-size: 1.25rem;
     background: $red;
