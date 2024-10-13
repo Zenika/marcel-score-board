@@ -16,5 +16,90 @@
         "location": "Zenika Nantes"
       }
     ]
+  },
+  {
+    "title": "Renovate/Dependabot, ou comment reprendre le contrôle sur la mise à jour de ses dépendances",
+    "room": "Tour Bretagne",
+    "time": "Jeudi 10:00",
+    "description": "Lorsqu’on développe un projet, on se laisse parfois facilement déborder par les mises à jour de dépendances : c’est rébarbatif, répétitif, bref, pas très fun, et personne n’a envie de le faire. Et si une solution automatique le faisait pour nous ou nous aidait à le faire ?\n\nC’est la promesse d’outils comme Dependabot ou Renovate qui vont nous proposer des Pull/Merge-requests avec les montées de versions des dépendances de nos projets. Magique non ?\n\nDans ce talk, après vous avoir (re)présenter ces deux outils, nous vous donnerons des conseils sur la mise en place de Renovate. Notre retour est basé sur nos expériences open source ou lors de notre mission (spoiler, bien sur que tout n’a pas fonctionné du premier coup \uD83D\uDE05). Ce sera l’occasion de vous faire une démo pour vous permettre de vous rendre compte de l'intérêt (mais pas que) de ces outils et pourquoi pas de vous décider à en installer un sur vos projets !",
+    "speakers": [
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/jean_phi_baconnais.jpg",
+        "name": "Jean-Phi Baconnais",
+        "location": "Zenika Nantes"
+      },
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/lise_quesnel.jpg",
+        "name": "Lise Quesnel",
+        "location": "Zenika Nantes"
+      }
+    ]
+  },
+  {
+    "title": "Mission Jetpack Compose : révolutionnez le développement mobile \uD83D\uDD75\uFE0F",
+    "room": "L'Atelier",
+    "time": "Jeudi 10:00",
+    "description": "Félicitations, vous démarrez votre tout nouveau job en tant qu’espion·ne à la CIA, la Compose Intelligence Agency \uD83D\uDD75\uFE0F\n\nVotre mission, si toutefois vous l’acceptez, consistera à intégrer notre équipe pour retrouver un dangereux fugitif \uD83E\uDD77\n\nDurant cette mission, votre objectif sera de créer une application “composée” de plusieurs écrans. Pour la mener à bien, vous aurez à disposition des gadgets fournis par Jetpack Compose, tels que les images, les animations et les previews \uD83E\uDDD1\u200D\uD83D\uDCBB\n\nVous aurez 2 heures, et pas une minute de plus, pour manier l’art de créer des applications mobiles ⏱\uFE0F Pas d'inquiétude, vous aurez à vos côtés nos deux meilleurs agents spécialisés dans le Renseignement Jetpack Compose.\n\nVenez apprendre la maîtrise de ces outils qui révolutionnent le développement Android, et bien plus.\n\nCe message s'autodétruira dans 5 secondes… \uD83D\uDCA3 Bonne chance.\n\nPré-requis : Un ordinateur avec l'IDE Android Studio",
+    "speakers": [
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/audrey_gentili.png",
+        "name": "Audrey Gentili",
+        "location": "Zenika Lyon"
+      },
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/olivier_perez.jpg",
+        "name": "Olivier Perez",
+        "location": "Zenika Lyon"
+      }
+    ]
+  },
+  {
+    "title": "React Compiler : Easier, Better, Faster, Stronger \uD83E\uDD16",
+    "room": "Titan",
+    "time": "Jeudi 16:20",
+    "description": "Imaginez une nouvelle version de React encore plus attendue qu’un album des Daft Punk \uD83D\uDCBD Avec les nouveaux hooks, les actions, les React Server Components et bien plus, la version 19 de React s’annonce révolutionnaire ! \uD83E\uDD2F Et c’est sans compter le hit de la version : Le React Compiler !\n\nAu travers d’exemples concrets et de démonstrations, parcourons ensemble cette feature inédite pour en comprendre le besoin initial et son fonctionnement ⚙\uFE0F En quelques notes de code, découvrons comment React vous promet désormais performance et optimisation en toute facilité !\n\nLe React Compiler, véritable chef-d'œuvre de cette mise à jour, s'annonce comme un remix parfait pour vos applications passées et futures ! Venez vibrer avec nous et laissez-vous emporter par le rythme du React Compiler ! \uD83D\uDE80",
+    "speakers": [
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/lucas_audart.jpg",
+        "name": "Lucas AUDART",
+        "location": "Zenika Lyon"
+      },
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/mickael_alves.png",
+        "name": "Mickaël Alves",
+        "location": "Zenika Lyon"
+      }
+    ]
+  },
+  {
+    "title": "Survie dans les ténèbres du rendu frontend: une exploration terrifiante \uD83E\uDEE3 \uD83D\uDE31",
+    "room": "Belem",
+    "time": "Jeudi 17:50",
+    "description": "Dans les sombres méandres du développement frontend, la survie dépend de la maîtrise des stratégies de rendu. Choisir la bonne approche peut non seulement influencer les performances et l'expérience utilisateur, mais aussi déterminer l'avenir de votre projet.\n\nDans cette terrifiante exploration des diverses stratégies de rendu (SSR, CSR, ISR, ...), nous dévoilerons les secrets les plus sombres de chaque approche, vous armant ainsi de votre arme la plus redoutable dans cette lutte épique contre l'obscurité technologique : la connaissance \uD83E\uDDE0\n\nPréparez-vous à affronter l'horreur technologique et à prendre des décisions cruciales pour assurer la survie de vos projets frontend \uD83D\uDD2A\uD83E\uDE78",
+    "speakers": [
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/alan_duchene.jpg",
+        "name": "Alan Duchene",
+        "location": "Freelance"
+      },
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/jimmy_kasprzak.jpg",
+        "name": "Jimmy Kasprzak",
+        "location": "Zenika Nantes"
+      }
+    ]
+  },
+  {
+    "title": "Dbt, ou comment facilement construire vos données",
+    "room": "Tour Bretagne",
+    "time": "Jeudi 17:50",
+    "description": "La gestion efficace des données est essentielle pour toute organisation moderne, mais la construction de pipelines de données robustes et évolutifs peut souvent être un défi.\n\nDans cette présentation, nous explorerons DBT (Data Build Tool), une solution révolutionnaire pour la transformation des données.\n\nDBT simplifie le processus de création de pipelines de données en utilisant des techniques de modélisation relationnelle et en s'intégrant parfaitement à vos entrepôts de données existants. Nous discuterons des principes fondamentaux de DBT, de son architecture flexible et de son utilisation pratique pour accélérer le développement de vos flux de données tout en respectant les bonnes pratiques de développement.\n\nQue vous soyez un analyste de données, un ingénieur ou un responsable technique, cette présentation vous fournira les connaissances et les outils nécessaires pour libérer le potentiel de vos données et optimiser votre workflow d'analyse.",
+    "speakers": [
+      {
+        "pic": "https://devfest2024.gdgnantes.com/images/speakers/guillaume_le_floch.jpg",
+        "name": "Guillaume Le Floch",
+        "location": "Zenika Niort"
+      }
+    ]
   }
 ]
