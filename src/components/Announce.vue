@@ -19,7 +19,7 @@ const props = defineProps({
 	}
 });
 
-const emits = defineEmits(['close']);
+defineEmits(['close']);
 
 let INTERVAL = 1000; // ms
 let DURATION = 10; // ms
@@ -66,9 +66,9 @@ function step() {
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background: linear-gradient(300deg, rgba(191,29,103,1) 0%, rgba(238,34,56,1) 100%);
+	background: linear-gradient(300deg, $zenika-red-2 0%, $zenika-red-1 100%);
 	color: $white;
-	z-index: 1;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
