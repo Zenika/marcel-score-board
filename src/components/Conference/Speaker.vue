@@ -23,21 +23,27 @@ defineProps({
 .speaker {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.25rem;
 	background-color: $white;
 	color: $zenika-black;
 	border-radius: .75rem;
 	padding: .5rem 1.5rem .5rem .5rem;
+	box-shadow: 2px 4px 4px transparentize($black, 0.95);
 }
 
 .pic {
-	height: 4rem;
-	width: 4rem;
+	height: 5rem;
+	width: 5rem;
 	border-radius: .5rem;
+}
+
+h2 {
+	font-size: 1.5rem;
 }
 
 p {
 	color: $zenika-red;
+	font-size: 1.25rem;
 }
 
 </style>

@@ -159,7 +159,7 @@ onMounted(() => {
 	align-items: center;
 	gap: 4rem;
 	width: 100%;
-	max-width: calc(1200px + 4rem);
+	max-width: calc(1440px + 4rem);
 	padding: 0 2rem;
 }
 
@@ -199,7 +199,7 @@ onMounted(() => {
 	position: relative;
 	width: 100%;
 	border-collapse: separate;
-	border-spacing: 0 .4rem;
+	border-spacing: 0 .5rem;
 
 	thead th {
 		color: $yellow;

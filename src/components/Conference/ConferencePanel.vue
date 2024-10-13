@@ -57,7 +57,7 @@ defineProps({
 	justify-content: center;
 	align-items: flex-start;
 	gap: 2rem;
-	max-width: calc(1200px + 4rem);
+	max-width: calc(1440px + 4rem);
 	padding: 0 2rem;
 	color: $white;
 	font-family: Nunito, sans-serif;
@@ -85,8 +85,8 @@ defineProps({
 
 .description {
 	margin: 2rem 0;
-	font-size: 1.25rem;
-	line-height: 2rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
 }
 
 .speakers {
