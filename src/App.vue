@@ -5,7 +5,7 @@
 		<ScoreBoard v-if="isScoreVisible"/>
 		<ConferencePanel :conference="conferences[currentIndex]" v-else/>
 	</Transition>
-	<div class="loader"></div>
+	<div class="loader" v-if="conferences.length > 0"></div>
 </template>
 
 <script setup lang="ts">
@@ -38,7 +38,10 @@ function nextSlide() {
 		isScoreVisible.value = true;
 		increaseIndex();
 	}
-	setTimeout(nextSlide, INTERVAL);
+	if(conferences.length > 0)
+		setTimeout(nextSlide, INTERVAL);
+	else
+		isScoreVisible.value = true;
 }
 
 onMounted(() => {
