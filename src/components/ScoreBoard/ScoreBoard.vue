@@ -46,9 +46,12 @@
   </main>
 </template>
 <script setup lang="ts">
-import {onMounted, ref} from 'vue';
+import {onMounted, onUnmounted, ref} from 'vue';
 import StatusAlert from '@/components/ScoreBoard/StatusAlert.vue';
 import ScoreCard from '@/components/ScoreBoard/ScoreCard.vue';
+
+const REFRESH_RATE: number = 60 * 5;
+let refreshLoop: number;
 
 const isUpdating = ref<boolean>(true);
 const lastUpdateDate = ref<string>("");
@@ -106,6 +109,12 @@ onMounted(() => {
 		isUpdating.value = false;
 	} else
 		loadSpreadSheet("AIzaSyCasDc28gfYMH1La9vxH3IMfHYgM_Yq8Rk");
+
+	refreshLoop = setInterval(() => loadSpreadSheet("AIzaSyCasDc28gfYMH1La9vxH3IMfHYgM_Yq8Rk"), REFRESH_RATE * 1000);
+});
+
+onUnmounted(() => {
+	clearInterval(refreshLoop);
 });
 
 </script>
