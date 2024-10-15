@@ -13,7 +13,7 @@
 	</div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 defineProps({
 	lastUpdateDate: {
 		type: String,
@@ -24,7 +24,7 @@ defineProps({
 	}
 })
 </script>
-<script>
+<script lang="ts">
 export default {
 	name: 'StatusAlert'
 }

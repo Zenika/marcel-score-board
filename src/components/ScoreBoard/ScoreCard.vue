@@ -20,17 +20,19 @@
 		</div>
 	</div>
 </template>
-<script setup>
+<script lang="ts" setup>
 defineProps({
 	score: {
 		type: Array,
+		required: true
 	},
 	index: {
 		type: Number,
+		default: 0
 	}
 })
 </script>
-<script>
+<script lang="ts">
 export default {
 	name: 'ScoreCard'
 }
